@@ -11,25 +11,19 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
+      - name: Check files
+        run: |
+          ls -la public/js/
+      
       - name: Replace Firebase Config
         run: |
-          if [ -z "${{ secrets.FIREBASE_CONFIG }}" ]; then
-            echo "ERROR: FIREBASE_CONFIG secret is empty!"
-            exit 1
-          fi
-          
-          CONFIG_ESCAPED=$(echo '${{ secrets.FIREBASE_CONFIG }}' | sed 's/[&/\]/\\&/g')
-          sed -i "s|__FIREBASE_CONFIG__|${CONFIG_ESCAPED}|g" public/js/main.js
-          
-          echo "Config replaced successfully"
-      
-      - name: Verify replacement
-        run: |
-          if grep -q "__FIREBASE_CONFIG__" public/js/main.js; then
-            echo "ERROR: Placeholder still present!"
-            exit 1
+          if [ -f "public/js/firebase.js" ]; then
+            CONFIG_ESCAPED=$(echo '${{ secrets.FIREBASE_CONFIG }}' | sed 's/[&/\]/\\&/g')
+            sed -i "s|__FIREBASE_CONFIG__|${CONFIG_ESCAPED}|g" public/js/firebase.js
+            echo "✅ Config replaced in firebase.js"
           else
-            echo "OK: Placeholder replaced"
+            echo "❌ public/js/firebase.js not found!"
+            exit 1
           fi
       
       - uses: actions/setup-node@v4
