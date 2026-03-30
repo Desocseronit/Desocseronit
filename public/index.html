@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desocseronit</title>
+    <style>
+        body {
+            width: 100%;
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            color: #fcdbff;
+            text-shadow: 0 0 10px rgba(251, 211, 255, 0.5);
+        }
+
+        header {
+            width: 100%;
+            height: 50px;
+            display: flex;
+            border-bottom: 3px solid #84128d;
+            align-items: center;
+            background-color: #430458;
+        }
+
+        #tabs {
+            display: flex;
+            width: 50%;
+            justify-content: space-around;
+        }
+
+        #tabs div {
+            height: 50px;
+            width: 100px;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        #tabs div:hover {
+            transform: translateY(-2px);
+            text-shadow: 0 0 10px #d107e4;
+        }
+
+        #avatar {
+            height: 100%;
+            width: 50%;
+            padding: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        #avatar img {
+            border-radius: 100px;
+            height: 90%;
+        }
+
+        .root {
+            background: linear-gradient(#570e6d, #360349);
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* first page */
+        .root#page1 {
+            font-size: 20px;
+            /* display: none; */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .root#page1 #page1-content {
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+            /* justify-content: center; */
+            align-items: center;
+        }
+
+        .root#page1 h1 {
+            margin: 30px 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .root#page1 table {
+            width: 400px;
+            border-collapse: separate;
+            border-spacing: 0px 25px;
+            margin-top: 30px;
+        }
+
+        .root#page1 table tr:hover {
+            transform: translateY(-2px);
+            text-shadow: 0 0 10px #f267ff;
+        }
+
+        .root#page1 table td {
+            border-bottom: 1px solid #ffffff;
+            width: 50%;
+        }
+
+        .root#page1 #clicker {
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+            align-items: center;
+        }
+
+        .root#page1 #clicker span {
+            font-size: 32px;
+            font-weight: bold;
+            margin: 10px 0;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(252, 219, 255, 0.5);
+        }
+
+        .root#page1 #clicker button {
+            width: 120px;
+            height: 50px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 12px;
+            border: 2px solid #6f1da5;
+            background: #58036d;
+            color: #fcdbff;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .root#page1 #clicker button:hover {
+            background: #790a86;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(154, 29, 165, 0.4);
+        }
+
+        .root#page1 #clicker button:active {
+            transform: translateY(1px);
+            background: #500960;
+        }
+
+        /* second page */
+
+        .root#page2 {
+            font-size: 20px;
+            display: none;
+        }
+
+        .root#page2 h1 {
+            margin: 30px 0;
+        }
+
+        .root#page2 table {
+            width: 400px;
+            border-collapse: separate;
+            border-spacing: 0px 25px;
+            margin-top: 30px;
+        }
+
+        .root#page2 table tr:hover {
+            transform: translateY(-2px);
+            text-shadow: 0 0 10px #f267ff;
+        }
+
+        .root#page2 table td {
+            border-bottom: 1px solid #ffffff;
+            width: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="tabs">
+            <div id="me">About me</div>
+            <div id="skills">About my skills</div>
+            <div id="api">Small demo</div>
+        </div>
+        <div id="avatar">
+            <img src="https://avatars.githubusercontent.com/u/209324609?v=4&size=64" alt="My avatar">
+        </div>
+    </header>
+    <div class="root" id="page1">
+        <h1>Some info about me</h1>
+        <div id="page1-content">
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td>Desocseronit</td>
+                </tr>
+                <tr>
+                    <td>Age</td>
+                    <td>17</td>
+                </tr>
+                <tr>
+                    <td>Hobbies</td>
+                    <td>Gaming, sports</td>
+                </tr>
+                <tr>
+                    <td>Strengths</td>
+                    <td>Easily learn new things</td>
+                </tr>
+                <tr>
+                    <td>Goals</td>
+                    <td>Become a highly skilled Fullstack Developer</td>
+                </tr>
+                <tr>
+                    <td>Personality</td>
+                    <td>Introvert</td>
+                </tr>
+                <tr>
+                    <td>Languages</td>
+                    <td>Russian (native), English (B1)</td>
+                </tr>
+                <tr>
+                    <td>Country</td>
+                    <td>Russia</td>
+                </tr>
+                <tr>
+                    <td>Education</td>
+                    <td>Student / Self-taught</td>
+                </tr>
+            </table>
+            <div id="clicker">
+                <h2>Say HI</h2>
+                <span>0</span>
+                <button>HI</button><!-- Кликер где все смогут кликнуть и будет глобальный счетчик  через fireBase-->
+            </div>
+        </div>
+    </div>
+    
+    <div class="root" id="page2">
+        <h1>Some info about my skills</h1>
+        <table>
+            <!-- тут о моих скилах -->
+            <!-- по типу что делал, какие языки знаю -->
+        </table>
+        <table>
+            <!-- тут репозиторий - ссылка (fetch(`https://api.github.com{GITHUB_USERNAME}/repos?sort=updated`);)-->
+        </table>
+        <!-- <h1>My GitHub Projects</h1>
+            <table id="repo-table">
+                <thead>
+                    <tr>
+                        <th>Repository Name</th>
+                        <th>Link</th>
+                    </tr>
+                </thead>
+                <tbody id="repos-list">
+                    <tr>
+                        <td colspan="2">Loading projects...</td>
+                    </tr>
+                </tbody>
+            </table> -->
+
+        <div id="cards">
+            <!-- тут карточка (ЯП и лого его), по клику переворот, там подробно что знаю -->
+        </div>
+    </div>
+    <div class="root" id="page3">
+        <!-- тут демка (хз что тут можно сделать) -->
+        <!-- не факт что демка, пока думаем -->
+        <!-- контакты? -->
+    </div>
+</body>
+<script type="module" src="./js/firebase.js"></script>
+</html>
