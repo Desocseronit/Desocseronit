@@ -13,7 +13,24 @@ jobs:
       
       - name: Replace Firebase Config
         run: |
-          sed -i "s|__FIREBASE_CONFIG__|${{ secrets.FIREBASE_CONFIG }}|g" public/js/main.js
+          if [ -z "${{ secrets.FIREBASE_CONFIG }}" ]; then
+            echo "ERROR: FIREBASE_CONFIG secret is empty!"
+            exit 1
+          fi
+          
+          CONFIG_ESCAPED=$(echo '${{ secrets.FIREBASE_CONFIG }}' | sed 's/[&/\]/\\&/g')
+          sed -i "s|__FIREBASE_CONFIG__|${CONFIG_ESCAPED}|g" public/js/main.js
+          
+          echo "Config replaced successfully"
+      
+      - name: Verify replacement
+        run: |
+          if grep -q "__FIREBASE_CONFIG__" public/js/main.js; then
+            echo "ERROR: Placeholder still present!"
+            exit 1
+          else
+            echo "OK: Placeholder replaced"
+          fi
       
       - uses: actions/setup-node@v4
         with:
