@@ -1,5 +1,10 @@
 const tBody = document.querySelector('#repo-table tbody')
-fetch('https://api.github.com/users/Desocseronit/repos?sort=updated')
+const GITHUB_TOKEN = __GIT_TOKEN__;
+fetch('https://api.github.com/users/Desocseronit/repos?sort=updated', {
+    headers: {
+        'Authorization': `token ${GITHUB_TOKEN}`
+    }
+})
 .then(resp => {
     if(resp.status != 200){
         tBody.querySelector('td').textContent = 'Error('

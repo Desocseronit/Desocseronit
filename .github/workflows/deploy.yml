@@ -26,6 +26,17 @@ jobs:
             exit 1
           fi
       
+      - name: Replace GitHub Token
+        run: |
+          if [ -f "public/js/githubRepos.js" ]; then
+            TOKEN_ESCAPED=$(echo '${{ secrets.GIT_TOKEN }}' | sed 's/[&/\]/\\&/g')
+            sed -i "s|__GIT_TOKEN__|${TOKEN_ESCAPED}|g" public/js/githubRepos.js
+            echo "✅ Token replaced in githubRepos.js"
+          else
+            echo "❌ public/js/githubRepos.js not found!"
+            exit 1
+          fi
+      
       - uses: actions/setup-node@v4
         with:
           node-version: '18'
