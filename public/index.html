@@ -11,15 +11,17 @@
 <body>
     <header>
         <div id="tabs">
-            <div id="me">About me</div>
-            <div id="skills">About my skills</div>
-            <div id="api">Small demo</div>
+            <div id="me" data-target="page1">About me</div>
+            <div id="skills" data-target="page2">About my skills</div>
+            <div id="api" data-target="page3">Small demo</div>
         </div>
         <div id="avatar">
-            <img src="https://avatars.githubusercontent.com/u/209324609?v=4&size=64" alt="My avatar">
+            <a href="https://github.com/Desocseronit">
+                <img src="https://avatars.githubusercontent.com/u/209324609?v=4&size=64" alt="My avatar">
+            </a>
         </div>
     </header>
-    <div class="root" id="page1">
+    <div class="root show" id="page1">
         <h1>Some info about me</h1>
         <div id="page1-content">
             <table>
@@ -63,12 +65,13 @@
             <div id="clicker">
                 <h2>Say HI</h2>
                 <span>0</span>
-                <button>HI</button><!-- Кликер где все смогут кликнуть и будет глобальный счетчик  через fireBase-->
+                <button>HI</button>
+                <!-- защита от спама -->
             </div>
         </div>
     </div>
 
-    <div class="root show" id="page2">
+    <div class="root" id="page2">
         <h1>Some info about my skills</h1>
         <div id="tables">
             <table>
@@ -78,7 +81,7 @@
                 </tr>
                 <tr>
                     <td>Stack</td>
-                    <td>HTML, CSS, JS, PHP, Node.js</td>
+                    <td>HTML, CSS, JS, TS, PHP, Node.js, PostgreSQL</td>
                 </tr>
                 <tr>
                     <td>Level(general)</td>
@@ -97,6 +100,9 @@
                     <td>Junior</td>
                 </tr>
                 <tr>
+                    <td>PostgreSQL</td>
+                    <td>Junior</td>
+                </tr>
             </table>
             <div id="repo-table-container">
                 <table id="repo-table">
@@ -113,29 +119,101 @@
                     </thead>
                     <tbody id="repos-list">
                         <tr>
-                            <td colspan="2">Loading projects...</td> 
+                            <td colspan="2">Loading projects...</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-<!-- добавить токен авторизации -->
         </div>
 
         <div id="cards">
-            <!-- тут карточка (ЯП и лого его), по клику переворот, там подробно что знаю -->
-             <div class="card hide" id="js">
+            <div class="card hide" id="js">
                 <div class="preview">
                     <div class="logo-container">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/3840px-Unofficial_JavaScript_logo_2.svg.png" alt="">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/3840px-Unofficial_JavaScript_logo_2.svg.png"
+                            alt="">
                     </div>
                     <span class="card-name">JavaScript</span>
                 </div>
                 <div class="info">
                     <ul>
-                        <li>asdasdadsdsdsdsdsdsdad</li>
+                        <li>DOM</li>
+                        <li>BOM</li>
+                        <li>Fetch API</li>
+                        <li>Backend communication</li>
+                        <li>OOP</li>
                     </ul>
                 </div>
-             </div> <!--сделать генерацию через js или в тупую писать?-->
+            </div>
+            <div class="card hide" id="ts">
+                <div class="preview">
+                    <div class="logo-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/250px-Typescript_logo_2020.svg.png"
+                            alt="">
+                    </div>
+                    <span class="card-name">TypeScript</span>
+                </div>
+                <div class="info">
+                    <ul>
+                        <li>Interfaces & Type Annotations</li>
+                        <li>OOP (Encapsulation, Abstract Classes)</li>
+                        <li>Getters & Setters</li>
+                        <li>Generics</li>
+                        <li>Union/Intersection Types</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card hide" id="Node.js">
+                <div class="preview">
+                    <div class="logo-container">
+                        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968322.png" alt="">
+                    </div>
+                    <span class="card-name">Node.js</span>
+                </div>
+                <div class="info">
+                    <ul>
+                        <li>HTTP Module</li>
+                        <li>File System (fs)</li>
+                        <li>Express.js</li>
+                        <li>WebSockets</li>
+                        <li>REST API</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card hide" id="php">
+                <div class="preview">
+                    <div class="logo-container">
+                        <img src="https://cdn.iconscout.com/icon/free/png-256/free-php-logo-icon-svg-download-png-2284918.png?f=webp"
+                            alt="">
+                    </div>
+                    <span class="card-name">PHP</span>
+                </div>
+                <div class="info">
+                    <ul>
+                        <li>File System</li>
+                        <li>HTTP Requests & Responses</li>
+                        <li>Database (PostgreSQL)</li>
+                        <li>Cookies</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card hide" id="postgres">
+                <div class="preview">
+                    <div class="logo-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/960px-Postgresql_elephant.svg.png"
+                            alt="">
+                    </div>
+                    <span class="card-name">PostgreSQL</span>
+                </div>
+                <div class="info">
+                    <ul>
+                        <li>Database Design (3NF)</li>
+                        <li>Foreign Keys</li>
+                        <li>SELECT & JOINs</li>
+                        <li>INSERT Operations</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
     <div class="root" id="page3">
@@ -146,5 +224,7 @@
 </body>
 <script type="module" src="./js/firebase.js"></script>
 <script src="./js/githubRepos.js"></script>
+<script src="./js/pageController.js"></script>
+<script src="./js/cardsController.js"></script>
 
 </html>
