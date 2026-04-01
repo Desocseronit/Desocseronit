@@ -22,18 +22,18 @@ fetch('https://api.github.com/users/Desocseronit/repos?sort=updated', {
 .then(arr => {tBody.innerHTML = '';
     for(let i = 0; i < arr.length; i++){
         drawNewRow(arr[i])
-        tBody.querySelector('td').textContent = 'Load error('
     }
 })
 .catch(err => {
+    console.log(err)
     if (err) {
+        tBody.querySelector('td').textContent = 'Load error('
         throw new Error(err)
     }
 })
 
 
 function drawNewRow(json){
-    console.log(json)
     let tr = document.createElement('tr')
     for(let i = 0; i < 2; i++){
         let cell = tr.insertCell()
@@ -46,6 +46,5 @@ function drawNewRow(json){
             cell.appendChild(a)
         }
     }
-    console.log(tr.innerHTML)
     tBody.appendChild(tr)
 }
