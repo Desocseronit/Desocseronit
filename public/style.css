@@ -390,12 +390,14 @@ body::-webkit-scrollbar-track {
 
 .root#page3 #cat-facts-container {
     margin-top: 100px;
-    width: 100%;
+    width: 30%;
+    height: 600px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 50px;
+    margin: 50px auto;
 }
 
 .root#page3 #cat-facts-container span {
@@ -405,6 +407,8 @@ body::-webkit-scrollbar-track {
     border-radius: 20px;
     border: 5px solid #e2b3f5;
     box-shadow: 0 0 10px #e2b3f5;
+    max-height: 200px;
+    overflow-y: auto;
 }
 
 .root#page3 #cat-facts-container button {
@@ -433,4 +437,20 @@ body::-webkit-scrollbar-track {
     transform: translateY(1px);
     box-shadow: 0 0 10px #e2b3f5;
     background: #360349;
+}
+
+.loader {
+    width: 24px;
+    height: 24px;
+    border: 3px solid #fcdbff;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
