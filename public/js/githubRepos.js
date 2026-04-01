@@ -1,5 +1,10 @@
 const tBody = document.querySelector('#repo-table tbody')
+tBody.querySelector('td').classList.add('loader')
+tBody.querySelector('td').textContent = ''
+
 const GITHUB_TOKEN = __GIT_TOKEN__;
+
+
 fetch('https://api.github.com/users/Desocseronit/repos?sort=updated', {
     headers: {
         'Authorization': `token ${GITHUB_TOKEN}`
