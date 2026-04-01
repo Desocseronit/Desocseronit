@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Tilt+Neon&display=swap" rel="stylesheet">
     <title>Desocseronit</title>
     <link rel="stylesheet" href="./style.css">
 </head>
@@ -65,8 +68,7 @@
             <div id="clicker">
                 <h2>Say HI</h2>
                 <span>0</span>
-                <button>HI</button>
-                <!-- защита от спама -->
+                <button style="font-family: 'Tilt Neon';">HI</button>
             </div>
         </div>
     </div>
@@ -119,7 +121,9 @@
                     </thead>
                     <tbody id="repos-list">
                         <tr>
-                            <td></td>
+                            <td colspan="2">
+                                <div></div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -219,10 +223,11 @@
     <div class="root" id="page3">
         <h1>Random cat facts</h1>
         <div id="cat-facts-container">
-            <span>Current fact is: <b id="fact">Click the button below</b></span>
+            <div id="fact-wrapper">
+                <span>Current fact is: <br><b id="fact">Click the button below</b></span>
+            </div>
             <button>Get random fact</button>
         </div>
-        <!-- по клику на кнопку партиклы в виде коттиков -->
     </div>
 </body>
 <script type="module" src="./js/firebase.js"></script>
