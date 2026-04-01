@@ -1,6 +1,5 @@
 const tBody = document.querySelector('#repo-table tbody')
-tBody.querySelector('td').classList.add('loader')
-tBody.querySelector('td').textContent = ''
+tBody.querySelector('td div').classList.add('loader')
 
 const GITHUB_TOKEN = __GIT_TOKEN__;
 
@@ -11,16 +10,24 @@ fetch('https://api.github.com/users/Desocseronit/repos?sort=updated', {
     }
 })
 .then(resp => {
+    tBody.querySelector('td div').remove()
     if(resp.status != 200){
-        tBody.querySelector('td').textContent = 'Error('
+        tBody.querySelector('td').textContent = 'Fetch error('
         throw new Error(`Fetch failed with code ${resp.status}`)
     }
-    else return resp.json()
-    
-})
+    else
+        return resp.json()
+    } 
+)
 .then(arr => {tBody.innerHTML = '';
     for(let i = 0; i < arr.length; i++){
         drawNewRow(arr[i])
+        tBody.querySelector('td').textContent = 'Load error('
+    }
+})
+.catch(err => {
+    if (err) {
+        throw new Error(err)
     }
 })
 
