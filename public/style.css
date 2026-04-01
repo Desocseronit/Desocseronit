@@ -66,6 +66,7 @@ body::-webkit-scrollbar-track {
 #tabs div:hover {
     transform: translateY(-2px);
     text-shadow: 0 0 10px #d107e4;
+    font-weight: 900;
 }
 
 #avatar {
