@@ -472,3 +472,16 @@ body::-webkit-scrollbar-track {
         transform: rotate(360deg);
     }
 }
+
+.disabled{
+    opacity: 0.5;
+    cursor: not-allowed !important;
+    box-shadow: 0 0 4px #f267ff !important;
+    text-shadow: 0 0 4px #ffffff !important;
+}
+
+.disabled:hover{
+    opacity: 0.6 !important;
+    box-shadow: 0 0 2px #f267ff !important;
+    text-shadow: 0 0 2px #ffffff !important;
+}
