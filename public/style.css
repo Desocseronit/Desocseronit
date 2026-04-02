@@ -109,6 +109,9 @@ body::-webkit-scrollbar-track {
     width: 100%;
     justify-content: space-around;
     align-items: center;
+    max-width: 2000px;
+    width: 2000px;
+    margin: 0 auto;
 }
 
 .root#page1 h1 {
@@ -190,8 +193,10 @@ body::-webkit-scrollbar-track {
     display: flex;
     padding: 0 100px;
     justify-content: space-around;
-    margin: 0;
+    margin: 0 auto;
     align-items: flex-start;
+    max-width: 2000px;
+    width: 2000px;
 }
 
 .root#page2 h1 {
@@ -258,6 +263,7 @@ body::-webkit-scrollbar-track {
 
 .root#page2 #cards {
     width: 80%;
+    max-width: 1200px;
     margin: 5% auto;
     display: flex;
     justify-content: space-around;
@@ -410,6 +416,7 @@ body::-webkit-scrollbar-track {
     max-height: 250px;
     overflow: hidden;
     width: 100%;
+    max-width: 800px;
 }
 
 .root#page3 #cat-facts-container span {
